@@ -115,6 +115,7 @@ const updateUsername = function() {
     })
 }
 
+/*
 const findMarkAndDelete = function() {
     // find specific user and delete
     return User.findOne({ username: 'Mark_the_boy' })
@@ -134,7 +135,7 @@ const findKennyAndDelete = function() {
             });
         });
 }
-
+*/
 const findBennyAndRemove = function() {
     // find specific user and delete
     return User.findOneAndRemove({ username: 'Benny_the_man' })
@@ -150,7 +151,7 @@ Promise.all([kenny.save(), mark.save(), benny.save()])
     .then(findSpecificRecord)
     .then(updadeUserPassword)
     .then(updateUsername)
-    .then(findMarkAndDelete)
-    .then(findKennyAndDelete)
+    //.then(findMarkAndDelete)
+    //.then(findKennyAndDelete)
     .then(findBennyAndRemove)
     .catch(console.log.bind(console))
