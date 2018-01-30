@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Heroku App</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body> 
+        
+  <div class="container" style="text-align: center;">    
+    <h1 style="margin-top: 50px">Create book list</h1> 
+    <h3 style="margin-bottom: 50px">(Express, MongoDB and Heroku)</h3>
+
+    <ul class="list-group list-group-flush">
+    <% for(var i=0; i<result.length; i++) {%>
+      <li class="list-group-item" style="margin-bottom: 20px;">
+      <span><strong><%= result[i].book %></strong></span>
+      <span><%= result[i].author %></span>
+      </li>
+    <% } %>
+    </ul>
+
+    <form action="/" method="POST" class="row">
+        <input type="text" class="form-control col-lg-5" placeholder="book" name="book">
+        <input type="text" class="form-control col-lg-5" placeholder="author" name="author">
+        <input type="submit" class="btn btn-primary col-lg-2" value="submit">
+    </form>
+  </div>  
+</body>
+</html>
