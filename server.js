@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
-
+const url = process.env.MONGOLAB_URI;
 const PORT = process.env.PORT || 5000;
 
 const getBooks = (req, res) => {
@@ -18,7 +18,7 @@ const saveBook = (req, res) => {
 };
 
 mongoose.connect(
- 'mongodb://marta:haslo@ds119028.mlab.com:19028/database-1',
+  url,
  {},
  (err, db) => {
   express()
